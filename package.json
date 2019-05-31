@@ -1,0 +1,44 @@
+{
+  "name": "@corux/ask-extensions",
+  "version": "0.0.1",
+  "description": "Extensions to improve development with Alexa Skills Kit SDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "pretest": "npm-run-all --parallel build lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "tsc",
+    "deploy": "npm publish --access=public"
+  },
+  "author": "corux",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Alexa",
+    "ask-sdk"
+  ],
+  "dependencies": {
+    "ask-sdk-core": "^2.6.0",
+    "ask-sdk-model": "^1.16.0",
+    "i18next": "^15.1.3",
+    "i18next-sync-fs-backend": "^1.1.1",
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "luxon": "^1.15.0"
+  },
+  "devDependencies": {
+    "@types/i18next-sprintf-postprocessor": "0.0.29",
+    "@types/jest": "24.0.13",
+    "@types/luxon": "1.15.1",
+    "@types/node": "10.14.8",
+    "jest": "24.8.0",
+    "npm-run-all": "4.1.5",
+    "ts-jest": "24.0.2",
+    "ts-node": "8.2.0",
+    "tslint": "5.16.0",
+    "typescript": "3.5.1"
+  }
+}
