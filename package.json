@@ -8,7 +8,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "pretest": "npm-run-all --parallel build lint",
-    "test": "jest",
+    "test": "jest --coverage",
+    "posttest": "cat ./coverage/lcov.info | codacy-coverage",
     "test:watch": "jest --watch",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "npm run lint -- --fix",
@@ -16,6 +17,10 @@
   },
   "author": "corux",
   "license": "Apache-2.0",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/corux/ask-extensions.git"
+  },
   "keywords": [
     "Alexa",
     "ask-sdk"
@@ -36,6 +41,7 @@
     "@types/jest": "24.0.13",
     "@types/luxon": "1.15.1",
     "@types/node": "10.14.8",
+    "codacy-coverage": "3.4.0",
     "jest": "24.8.0",
     "npm-run-all": "4.1.5",
     "ts-jest": "24.0.2",

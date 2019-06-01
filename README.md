@@ -2,7 +2,8 @@
 
 [![Travis (.com)](https://img.shields.io/travis/com/corux/ask-extensions.svg)](https://travis-ci.com/corux/ask-extensions)
 [![npm](https://img.shields.io/npm/v/@corux/ask-extensions.svg)](https://www.npmjs.com/package/@corux/ask-extensions)
-![npm type definitions](https://img.shields.io/npm/types/@corux/ask-extensions.svg)
+[![npm type definitions](https://img.shields.io/npm/types/@corux/ask-extensions.svg)](https://www.npmjs.com/package/@corux/ask-extensions)
+[![Codacy grade](https://img.shields.io/codacy/grade/4030dab750f740e0b97beacaa26d9fde.svg)](https://www.codacy.com/app/corux/ask-extensions)
 
 This package provides various extensions to improve development with Alexa Skills Kit SDK v2.
 
