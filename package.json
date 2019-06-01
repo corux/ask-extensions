@@ -1,6 +1,6 @@
 {
   "name": "@corux/ask-extensions",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Extensions to improve development with Alexa Skills Kit SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,8 +18,8 @@
   "author": "corux",
   "license": "Apache-2.0",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/corux/ask-extensions.git"
+    "type": "git",
+    "url": "https://github.com/corux/ask-extensions.git"
   },
   "keywords": [
     "Alexa",
