@@ -1,6 +1,6 @@
 # Alexa SDK Extensions
 
-[![Travis (.org)](https://img.shields.io/travis/corux/ask-extensions.svg)](https://travis-ci.org/corux/ask-extensions)
+[![Travis (.com)](https://img.shields.io/travis/com/corux/ask-extensions.svg)](https://travis-ci.com/corux/ask-extensions)
 [![npm](https://img.shields.io/npm/v/@corux/ask-extensions.svg)](https://www.npmjs.com/package/@corux/ask-extensions)
 ![npm type definitions](https://img.shields.io/npm/types/@corux/ask-extensions.svg)
 
