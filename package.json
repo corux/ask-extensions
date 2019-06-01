@@ -12,8 +12,7 @@
     "test:watch": "jest --watch",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "npm run lint -- --fix",
-    "build": "tsc",
-    "deploy": "npm publish --access=public"
+    "build": "tsc"
   },
   "author": "corux",
   "license": "Apache-2.0",
@@ -21,6 +20,9 @@
     "Alexa",
     "ask-sdk"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-model": "^1.16.0",
