@@ -1,6 +1,5 @@
 import { HandlerInput, RequestInterceptor } from "ask-sdk-core";
 import i18next, * as i18n from "i18next";
-import * as sprintf from "i18next-sprintf-postprocessor";
 import * as Backend from "i18next-sync-fs-backend";
 import { IExtendedHandlerInput } from "../sdk";
 
@@ -12,7 +11,6 @@ export class LocalizationInterceptor implements RequestInterceptor {
 
   public process(handlerInput: HandlerInput) {
     (i18n as any as i18next.i18n)
-      .use(sprintf)
       .use(Backend)
       .init({
         backend: {
@@ -21,7 +19,6 @@ export class LocalizationInterceptor implements RequestInterceptor {
         defaultNS: "translation",
         initImmediate: false,
         lng: handlerInput.requestEnvelope.request.locale,
-        overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
         returnObjects: true,
       }, (err, t) => {
         const attributes = handlerInput.attributesManager.getRequestAttributes();
@@ -33,19 +30,13 @@ export class LocalizationInterceptor implements RequestInterceptor {
   }
 
   private randomTranslation(t: i18next.TFunction): i18next.TFunction {
-    return (...args: any[]) => {
-      const values = args.slice(1);
+    return (key, options) => {
+      const result = t(key, options);
 
-      const value = t(args[0], {
-        postProcess: "sprintf",
-        returnObjects: true,
-        sprintf: values,
-      });
-
-      if (Array.isArray(value)) {
-        return value[Math.floor(Math.random() * value.length)];
+      if (Array.isArray(result)) {
+        return result[Math.floor(Math.random() * result.length)];
       } else {
-        return value;
+        return result;
       }
     };
   }
