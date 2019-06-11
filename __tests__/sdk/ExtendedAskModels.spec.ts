@@ -1,7 +1,7 @@
 import { Directive, interfaces, Response, ui } from "ask-sdk-model";
-import { BaseRequestHandler, Fallback, IExtendedHandlerInput } from "../src";
-import { getResponseBuilder } from "../src/sdk/ExtendedResponseBuilder";
-import { createHandlerInput } from "./utils";
+import { BaseRequestHandler, Fallback, IExtendedHandlerInput } from "../../src";
+import { getResponseBuilder } from "../../src/sdk/ExtendedResponseBuilder";
+import { createHandlerInput } from "../utils";
 
 describe("Extended ASK models", () => {
   describe("ExtendedHandlerInput", () => {

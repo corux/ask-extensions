@@ -14,12 +14,21 @@ export function createHandlerInput(requestType: Request["type"], intentName: str
   }
 
   return {
-    attributesManager: null,
+    attributesManager: {
+      getRequestAttributes: () => ({}),
+    },
     requestEnvelope: {
-      context: null,
+      context: {
+        System: {
+          device: {},
+        },
+      },
       request,
       version: null,
     },
-    responseBuilder: {},
+    responseBuilder: {
+      getResponse: () => ({}),
+    },
+    serviceClientFactory: {},
   } as IExtendedHandlerInput;
 }

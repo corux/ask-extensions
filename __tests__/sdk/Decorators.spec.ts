@@ -1,10 +1,10 @@
 // tslint:disable:max-classes-per-file
 import { Response } from "ask-sdk-model";
-import { BaseRequestHandler, Fallback, IExtendedHandlerInput, Intents, Request } from "../src";
-import { createHandlerInput } from "./utils";
+import { BaseRequestHandler, Fallback, IExtendedHandlerInput, Intents, Request } from "../../src";
+import { createHandlerInput } from "../utils";
 
 describe("Decorator Framework", () => {
-  describe("Fallback", () => {
+  describe(Fallback.name, () => {
     @Fallback()
     class TestHandler extends BaseRequestHandler {
       public handle(handlerInput: IExtendedHandlerInput): Response {
@@ -17,7 +17,7 @@ describe("Decorator Framework", () => {
     });
   });
 
-  describe("Request", () => {
+  describe(Request.name, () => {
     @Request("AlexaSkillEvent.SkillEnabled", "AlexaSkillEvent.SkillDisabled")
     class TestHandler extends BaseRequestHandler {
       public handle(handlerInput: IExtendedHandlerInput): Response {
@@ -35,7 +35,7 @@ describe("Decorator Framework", () => {
     });
   });
 
-  describe("Intents", () => {
+  describe(Intents.name, () => {
     @Intents("TestIntent1", "TestIntent2")
     class TestHandler extends BaseRequestHandler {
       public handle(handlerInput: IExtendedHandlerInput): Response {
