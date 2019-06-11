@@ -1,3 +1,4 @@
+import { Settings } from "luxon";
 import { TimezoneInterceptor } from "../../src";
 import { createHandlerInput } from "../utils";
 
@@ -28,6 +29,20 @@ describe("Interceptors", () => {
 
       expect(getSystemTimezoneMock).toBeCalledWith("testDevice");
       expect(callback).toBeCalledWith("Europe/Berlin");
+    });
+
+    it("should configure luxon by default", async () => {
+      const handlerInput = createHandlerInput("LaunchRequest");
+      handlerInput.requestEnvelope.context.System.device.deviceId = "testDevice";
+      const getSystemTimezoneMock = jest.fn(() => "Europe/Berlin");
+      handlerInput.serviceClientFactory.getUpsServiceClient = () => ({
+        getSystemTimeZone: getSystemTimezoneMock,
+      }) as any;
+      const interceptor = new TimezoneInterceptor();
+
+      await interceptor.process(handlerInput);
+
+      expect(Settings.defaultZoneName).toBe("Europe/Berlin");
     });
   });
 });
