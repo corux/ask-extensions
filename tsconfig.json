@@ -9,6 +9,7 @@
     "module": "commonjs",
     "outDir": "dist",
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "rootDir": "src",
     "sourceMap": true,
     "target": "es5"

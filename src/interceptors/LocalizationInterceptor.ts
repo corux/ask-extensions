@@ -1,16 +1,17 @@
 import { HandlerInput, RequestInterceptor } from "ask-sdk-core";
-import i18next, * as i18n from "i18next";
-import * as Backend from "i18next-sync-fs-backend";
+import { TFunction } from "i18next";
+import i18n from "i18next";
+import Backend from "i18next-sync-fs-backend";
 import { IExtendedHandlerInput } from "../sdk";
 
 /**
  * Configures i18next and add the translation function to the handler input and request attributes.
  */
 export class LocalizationInterceptor implements RequestInterceptor {
-  public constructor(private readonly loadPath: string = "i18n/{{lng}}.json") {}
+  public constructor(private readonly loadPath: string = "i18n/{{lng}}.json") { }
 
-  public process(handlerInput: HandlerInput) {
-    (i18n as any as i18next.i18n)
+  public async process(handlerInput: HandlerInput): Promise<void> {
+    await i18n
       .use(Backend)
       .init({
         backend: {
@@ -29,7 +30,7 @@ export class LocalizationInterceptor implements RequestInterceptor {
       });
   }
 
-  private randomTranslation(t: i18next.TFunction): i18next.TFunction {
+  private randomTranslation(t: TFunction): TFunction {
     return (key, options) => {
       const result = t(key, options);
 
