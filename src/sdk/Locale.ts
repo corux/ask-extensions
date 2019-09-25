@@ -1,7 +1,9 @@
 /** The set of supported locales by Alexa. */
 export type Locale = "en-US" | "en-CA" | "en-IN" | "en-AU" | "en-GB"
   | "es-ES" | "es-MX" | "es-US"
-  | "fr-FR"
+  | "fr-FR" | "fr-CA"
   | "it-IT"
   | "de-DE"
-  | "pt-BR";
+  | "pt-BR"
+  | "ja-JP"
+  | "hi-IN";
