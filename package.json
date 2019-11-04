@@ -36,7 +36,7 @@
     "luxon": "^1.17.2"
   },
   "devDependencies": {
-    "@types/jest": "24.0.20",
+    "@types/jest": "24.0.21",
     "@types/luxon": "1.15.2",
     "@types/node": "10.14.8",
     "codacy-coverage": "3.4.0",
