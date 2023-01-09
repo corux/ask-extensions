@@ -33,7 +33,7 @@
     "ask-sdk-model": "^1.19.0",
     "i18next": "^18.0.0",
     "i18next-sync-fs-backend": "^1.1.1",
-    "luxon": "^1.17.2"
+    "luxon": "^2.5.2"
   },
   "devDependencies": {
     "@types/jest": "26.0.19",
